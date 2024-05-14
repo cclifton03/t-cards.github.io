@@ -1,19 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./venuescard.css";
-import { useNavigate } from "react-router-dom";
 
 function VenueCard(props) {
-  const navigate = useNavigate();
+
   const aVenue = props.venueData;
 
-  const onViewDetails = () => {
-    var state = {
-      type: "Venue Card",
-      payload: aVenue,
-    };
-    navigate(`/venuesinnerdescription?id=${aVenue.id}`, { state });
-  };
 
   return (
     <React.Fragment>
@@ -40,17 +32,5 @@ function VenueCard(props) {
     </React.Fragment>
   );
 }
-VenueCard.propTypes = {
-  venueData: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    fileImageUrl: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-    description: PropTypes.string.isRequired,
-    locationInfo: PropTypes.shape({
-      city: PropTypes.string.isRequired,
-      state: PropTypes.string.isRequired,
-    }),
-  }).isRequired,
-};
 
 export default VenueCard;
