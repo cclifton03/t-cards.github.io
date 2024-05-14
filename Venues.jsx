@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-import debug from "sabio-debug";
 import venuesService from "services/venuesService";
 import VenueCard from "./VenueCard";
 import "./venuescard.css";
 import Pagination from "rc-pagination";
 import locale from "rc-pagination/lib/locale/en_US";
 import toastr from "toastr";
-
-const _logger = debug.extend("Venues");
 
 function Venues() {
   const [venueInfo, setVenueInfo] = useState({
